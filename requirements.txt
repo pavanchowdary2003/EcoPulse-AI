@@ -6,4 +6,4 @@ numpy
 gdown
 scikit-learn
 xgboost
-tensorflow
+tensorflow-cpu
