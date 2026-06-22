@@ -101,7 +101,7 @@ try:
     col_left, col_right = st.columns(2)
     
     with col_left:
-        speed_rpm = st.slider("Engine Speed (RPM)", min_value=800, max_value=4000, value=2000, step=50)
+        speed_rpm = st.slider("Engine Speed", min_value=0, max_value=350, value=175, step=5)
         load_pct = st.slider("Engine Load (%)", min_value=10, max_value=100, value=50, step=1)
         lambda_val = st.slider("Lambda (λ)", min_value=0.80, max_value=1.40, value=1.00, step=0.01)
 
@@ -110,7 +110,7 @@ try:
         fuel_cutoff = st.selectbox("Fuel Cutoff State", options=[0, 1], format_func=lambda x: "Active (1)" if x == 1 else "Inactive (0)")
 
     # 6. Transform inputs behind the scenes into model space [-5, 5]
-    speed = scale_to_model(speed_rpm, 800.0, 4000.0)
+    speed = scale_to_model(speed_rpm, 0.0, 350.0)
     load = scale_to_model(load_pct, 10.0, 100.0)
     lambda_ = scale_to_model(lambda_val, 0.80, 1.40)
     ignition = scale_to_model(ignition_deg, 0.0, 40.0)
