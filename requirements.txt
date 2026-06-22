@@ -1,9 +1,8 @@
 streamlit
-pandas
+pandas<3.0.0
 seaborn
 matplotlib
-numpy
+numpy<2.0.0
 gdown
 scikit-learn
 xgboost
-tensorflow-cpu
